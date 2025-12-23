@@ -187,13 +187,13 @@ MIT License - Xem file [LICENSE](LICENSE) để biết thêm chi tiết.
 
 ## 👤 Author
 
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
+**Tong Phuoc Hoai Nam**
+- GitHub: [@tetsde](https://github.com/tetsde)
+- Email: tphn26.work@gmail.com
 
 ## 🙏 Acknowledgments
 
-- Dataset từ [nguồn dataset của bạn]
+- Dataset từ Kaggle
 - Inspired by Andrew Ng's Machine Learning course
 
 ---
