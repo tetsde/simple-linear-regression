@@ -24,10 +24,10 @@ class LinearRegressionModel:
             df = df.sample(frac=1, random_state=42).reset_index(drop=True)
             return df
         except FileNotFoundError:
-            print(f"❌ Không tìm thấy file: {filepath}")
+            print(f"Không tìm thấy file: {filepath}")
             sys.exit(1)
         except Exception as e:
-            print(f"❌ Lỗi khi đọc file: {e}")
+            print(f"Lỗi khi đọc file: {e}")
             sys.exit(1)
     
     def split_data(self, df, train_ratio=0.7, dev_ratio=0.15):
@@ -92,25 +92,25 @@ class LinearRegressionModel:
         plt.grid(True, alpha=0.3)
         
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
-        print(f"✅ Biểu đồ đã được lưu tại: {save_path}")
+        print(f"Biểu đồ đã được lưu tại: {save_path}")
         plt.close()
 
 
 def train_command(args):
     """Lệnh train model"""
     print("=" * 50)
-    print("🚀 BẮT ĐẦU TRAIN MODEL")
+    print("BẮT ĐẦU TRAIN MODEL")
     print("=" * 50)
     
     model = LinearRegressionModel()
     
     # Load data
-    print(f"📂 Đang load dữ liệu từ: {args.data}")
+    print(f"Đang load dữ liệu từ: {args.data}")
     df = model.load_data(args.data)
-    print(f"✅ Đã load {len(df)} dòng dữ liệu")
+    print(f"Đã load {len(df)} dòng dữ liệu")
     
     # Split data
-    print("📊 Chia dữ liệu...")
+    print("Chia dữ liệu...")
     train_df, dev_df, test_df = model.split_data(df)
     print(f"   Train: {len(train_df)} | Dev: {len(dev_df)} | Test: {len(test_df)}")
     
@@ -119,29 +119,29 @@ def train_command(args):
     X_test, y_test = model.prepare_xy(test_df)
     
     # Train
-    print("🎯 Đang train model...")
+    print("Đang train model...")
     weights = model.train(X_train, y_train)
-    print(f"✅ Trọng số (w): {weights}")
+    print(f"Trọng số (w): {weights}")
     
     # Evaluate
-    print("📈 Đánh giá model...")
+    print("Đánh giá model...")
     mse = model.evaluate(X_test, y_test)
-    print(f"✅ MSE Score: {mse:,.2f}")
+    print(f"MSE Score: {mse:,.2f}")
     
     # Plot if requested
     if args.plot:
-        print("📊 Đang tạo biểu đồ...")
+        print("Đang tạo biểu đồ...")
         model.plot_results(X_test, y_test, args.output)
     
     print("=" * 50)
-    print("✅ HOÀN THÀNH!")
+    print("HOÀN THÀNH!")
     print("=" * 50)
 
 
 def predict_command(args):
     """Lệnh dự đoán lương"""
     print("=" * 50)
-    print("🔮 DỰ ĐOÁN LƯƠNG")
+    print(" DỰ ĐOÁN LƯƠNG")
     print("=" * 50)
     
     # Train model trước
@@ -160,14 +160,14 @@ def predict_command(args):
     
     predicted_salary = model.predict(X_new)[0]
     
-    print(f"📊 Năm kinh nghiệm: {years}")
-    print(f"💰 Lương dự đoán: ${predicted_salary:,.2f}")
+    print(f" Năm kinh nghiệm: {years}")
+    print(f"Lương dự đoán: ${predicted_salary:,.2f}")
     print("=" * 50)
 
 
 def main():
     parser = argparse.ArgumentParser(
-        description="🎯 Simple Linear Regression CLI - Dự đoán lương theo kinh nghiệm",
+        description="Simple Linear Regression CLI - Dự đoán lương theo kinh nghiệm",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Ví dụ sử dụng:
