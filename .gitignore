@@ -49,6 +49,11 @@ venv.bak/
 *.pdf
 regression.png
 
+# Except examples folder
+!examples/
+!examples/*.png
+!examples/*.jpg
+
 # Data (uncomment if you don't want to commit data)
 # *.csv
 # *.xlsx
