@@ -10,6 +10,28 @@ Project này được tạo ra để:
 - Xây dựng CLI tool đơn giản với Python
 - Phân tích mối quan hệ giữa kinh nghiệm và lương
 
+## 📸 Screenshots
+
+### Kết quả phân tích
+![Regression Plot](examples/sample_output.png)
+
+### Demo CLI
+```bash
+$ python cli.py train --plot
+==================================================
+🚀 BẮT ĐẦU TRAIN MODEL
+==================================================
+📂 Đang load dữ liệu từ: Salary_dataset.csv
+✅ Đã load 30 dòng dữ liệu
+📊 Chia dữ liệu...
+   Train: 21 | Dev: 4 | Test: 5
+🎯 Đang train model...
+✅ Trọng số (w): [24320.48  9469.27]
+📈 Đánh giá model...
+✅ MSE Score: 46,129,192.53
+==================================================
+```
+
 ## 📁 Cấu trúc Project
 
 ```
